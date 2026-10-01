@@ -1,32 +1,48 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.exercicios;
 import java.util.Scanner;
+/**
+ *
+ * @author 50695011863
+ */
+public class ex43 {
 
-public class ex42 {
-    public static void main(String[] args) throws Exception {
-
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Informe dois números e descubra o MMC");
-        System.out.print("Digite o primeiro número: ");
-        int numUserP = sc.nextInt();
-        System.out.print("Digite o segundo número: ");
-        int numUserS = sc.nextInt();
-
-        int MDCP = numUserP;
-        int MDCS = numUserS;
-
-
-        while (MDCS != 0) {
-            int resto = MDCP % MDCS;
-            MDCP = MDCS;
-            MDCS = resto;
-        }
+        System.out.println("Acesso ao menu!");
+        int escolhaUser = 0;
         
-        int mdc = MDCP;
-
-
-        int mmc = Math.abs(numUserP * numUserS) / mdc;
-
-        System.out.println("O MMC entre " + numUserP + " e " + numUserS + " é: " + mmc);
+        do{
+            System.out.println("---------Menu---------");
+            System.out.println("""
+            1 - Adicionar Valor ao Saldo
+            2 - Retirar valor do saldo
+            3 - Exibir saldo Atual
+            0 - Encerrar Sistema   
+                           """);
+            escolhaUser = sc.nextInt();
         
-        sc.close();
+            switch (escolhaUser) {
+                case 1:
+                    System.out.println("Valor adicionado");
+                    break;
+                case 2:
+                    System.out.println("Retirar do saldo");
+                    break;
+                case 3:
+                    System.out.println("Exibir saldo");
+                    break;
+                case 0:
+                    System.out.println("Encerrado");
+                    break;
+                default:
+                    System.out.println("Valor inválido!") ;
+            }       
+        }while(escolhaUser!=0);
+        
+              
     }
 }
